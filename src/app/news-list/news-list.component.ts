@@ -8,14 +8,21 @@ import { NewsService } from '../news.service'
   styleUrls: ['./news-list.component.scss']
 })
 export class NewsListComponent implements OnInit {
-  // news$: Observable<any[]>;
+  news: any = {
+    articles: []
+  }
 
   constructor(private newsService: NewsService) {}
 
   ngOnInit(): void {
-    this.newsService.getNews().subscribe(
-      data => console.log(data)
-    )
+    this.getNews()
+    console.log(this.news)
   }
 
+  getNews() {
+    this.newsService.getNews().subscribe((data: any) => {
+      this.news = {...data}
+      console.log(data)
+    });
+  }
 }
