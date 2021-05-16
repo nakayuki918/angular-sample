@@ -10,7 +10,7 @@ export class NewsService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
-  newsUrl = `https://newsapi.org/v2/everything?q=tesla&from=2021-04-14&sortBy=publishedAt&apiKey=${environment.apiKey}`
+  newsUrl = `https://newsapi.org/v2/everything?q=tesla&from=2021-05-01&sortBy=publishedAt&apiKey=${environment.apiKey}`
 
   constructor(
     private http: HttpClient

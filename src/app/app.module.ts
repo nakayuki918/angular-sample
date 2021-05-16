@@ -6,7 +6,18 @@ import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { NewsListComponent } from './news-list/news-list.component'
-import { NewsService } from './news.service'
+import { NewsService } from './news.service';
+
+import { NZ_I18N } from 'ng-zorro-antd/i18n';
+import { en_US } from 'ng-zorro-antd/i18n';
+import { registerLocaleData } from '@angular/common';
+import en from '@angular/common/locales/en';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { NzListModule } from 'ng-zorro-antd/list';
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
+
+registerLocaleData(en);
 
 @NgModule({
   declarations: [
@@ -17,9 +28,14 @@ import { NewsService } from './news.service'
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    NzListModule,
+    NzLayoutModule
   ],
   providers: [
-    NewsService
+    NewsService,
+    { provide: NZ_I18N, useValue: en_US }
   ],
   bootstrap: [AppComponent]
 })
