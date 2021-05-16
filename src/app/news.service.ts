@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { environment } from './../environments/environment';
+import { News } from './news-list/news-list.component'
 
 @Injectable()
 export class NewsService {
@@ -16,7 +17,7 @@ export class NewsService {
     private http: HttpClient
   ) { }
 
-  getNews(): Observable<any[]> {
-      return this.http.get<any[]>(this.newsUrl)
+  getNews(): Observable<News> {
+    return this.http.get<News>(this.newsUrl)
   }
 }
