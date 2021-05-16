@@ -17,7 +17,7 @@ export class NewsService {
     private http: HttpClient
   ) { }
 
-  getNews(): Observable<News> {
-    return this.http.get<News>(this.newsUrl)
+  getNews(page: number = 1 ): Observable<News> {
+    return this.http.get<News>(`${this.newsUrl}&page=${page}`)
   }
 }

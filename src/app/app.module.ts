@@ -16,6 +16,8 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { NzListModule } from 'ng-zorro-antd/list';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { NzPaginationModule } from 'ng-zorro-antd/pagination';
+import { PaginationComponent } from './pagination/pagination.component';
 
 registerLocaleData(en);
 
@@ -23,6 +25,7 @@ registerLocaleData(en);
   declarations: [
     AppComponent,
     NewsListComponent,
+    PaginationComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,8 @@ registerLocaleData(en);
     FormsModule,
     BrowserAnimationsModule,
     NzListModule,
-    NzLayoutModule
+    NzLayoutModule,
+    NzPaginationModule
   ],
   providers: [
     NewsService,
